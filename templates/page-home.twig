@@ -1,0 +1,31 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  
+{# <ul class="grid grid-home">
+  {% for post in latestPosts %}
+  <li class="grid-item grid-item--{{ post.type.labels.singular_name }}">
+    <a class="grid-item-link" href="{{ post.link }}">
+      {% if post.thumbnail %}
+      <div class="featuredInfo">
+        <p class="title">{{ post.title }}</p>
+      </div>
+      {% endif %}
+      <div class="featuredImage">
+        <img src="{{ post.thumbnail.src }}" />
+      </div>
+      <div class="featuredInfo">
+        <div class="date">{{ post.datePost|date("d.m.Y")|escape('wp_kses_post') }}</div>
+        <div class="post-type">{{ post.type.labels.singular_name }}</div>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul> #}
+{# {{ function('do_shortcode', '[ajax_load_more id="Test" container_type="div" post_type="podcast, event, article" posts_per_page="20" images_loaded="true" transition="masonry" masonry_selector=".grid-item" masonry_animation="slide-up"]') }} #}
+{% for component in post.meta('pagehomeComponents') %}
+  {{ renderComponent(component) }}
+{% endfor %}
+{# {% include "templates/_home-loop.twig" %} #}
+  
+{% endblock %}

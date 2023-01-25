@@ -1,0 +1,38 @@
+{% if items|length > 0 %}
+<div class="flyntComponent slider-posts" is="flynt-slider-posts">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div data-slider class="slider swiper-container">
+    <div class="swiper-wrapper">
+      {% for item in items %}
+        <div class="slider-item swiper-slide">
+          <figure class="figure">
+            <img class="content-image" id="image{{ loop.index }}"
+              src="{{ item.thumbnail.src|resize(2560) }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+              data-sizes="auto"
+              alt="{{ item.thumbnail.alt|e }}">
+          </figure>
+          <a href="{{ item.link }}" class="content-link paragraph" id="title{{ loop.index }}" title="{{ post.title }}">
+            <div class="title">{{ item.title }}</div>
+            {% if item.datePostStart or item.datePostEnd%}
+            <div class="date">
+              <span>{{ item.datePostStart|date("d.m.Y")|escape('wp_kses_post') }} - </span>
+              <span>{{ item.datePostEnd|date("d.m.Y")|escape('wp_kses_post') }}</span>
+            </div>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="slider-button-container">
+      <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+        <i data-feather="arrow-left"></i>
+      </button>
+      <div data-slider-pagination class="slider-pagination swiper-pagination-fraction"></div>
+      <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+        <i data-feather="arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+{% endif %}

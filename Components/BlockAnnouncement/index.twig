@@ -1,0 +1,10 @@
+<div class="flyntComponent flyntComponent--announcement" is="flynt-block-announcement">
+  <div class="container">
+   {% if ctaLink.url %}
+      <a class="cta small" href="{{ ctaLink.url }}"{% if ctaLink.target %} target="{{ ctaLink.target }}" rel="noreferrer noopener"{% endif %}>
+        {{ ctaLink.title|e }}
+      </a>
+    {% endif %}
+    <div class="close small">✕</div>
+  </div>
+</div>

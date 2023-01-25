@@ -1,0 +1,13 @@
+/* Custom styling for homepage */
+
+.page-home {
+  @media (max-width: $breakpoint-mobile) {
+    .mainContent {
+      min-height: calc(100vh - 110px);
+    }
+
+    [is='flynt-slider-posts'] {
+      display: none;
+    }
+  }
+}

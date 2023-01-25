@@ -1,0 +1,105 @@
+[is='flynt-list-social'] {
+  padding: $spacing-large;
+  text-align: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 $spacing-small;
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0 $spacing-large*2;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0 20px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-flow: row nowrap;
+      overflow: scroll;
+      padding: 0;
+    }
+  }
+
+  .componentTitle {
+    font-size: 0.375rem;
+    padding-right: $spacing-large;
+    text-transform: uppercase;
+    width: fit-content;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  .contact {
+    border: 1px solid $black;
+    font-size: 14px;
+    line-height: 1;
+    margin-right: $spacing-large;
+    padding: 5px;
+    text-decoration: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-right: $spacing-small;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $black;
+      color: $lime;
+      text-decoration: none;
+    }
+  }
+
+  .social {
+    @include reset-content-margins;
+    width: 100%;
+
+    .socialList {
+      @include reset-list;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+  
+      svg {
+        transition: color 0.2s ease;
+      }
+  
+      &-link {
+        box-sizing: content-box;
+        display: block;
+        text-decoration: none;
+  
+        &:hover,
+        &:focus {
+          svg {
+            color: $yellow;
+          }
+        }
+      }
+  
+      &-item {
+        display: inline-block;
+        margin: $spacing-small;
+      }
+  
+      svg {
+        display: block;
+        height: 50px;
+        width: auto;
+
+        @media (max-width: $breakpoint-tablet) {
+          height: 40px;
+        }
+
+        path {
+          fill: $blue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{# {% if items|length > 0 %} #}
+  <div class="flyntComponent" is="flynt-grid-all-posts">
+    <div class="container boxed">
+      {# <div class="grid-filter">
+        <a class="filter filter-events pillCircle">EVENTS</a>
+        <a class="filter filter-articles pillCircle">ARTICLES</a>
+        <a class="filter filter-podcasts pillCircle">PODCASTS</a>
+      </div> #}
+      {{ function('do_shortcode', '[ajax_load_more id="Home" category__not_in="18" loading_style="infinite fading-blocks" container_type="div" css_classes=".grid" post_type="post" posts_per_page="20" images_loaded="true" transition="masonry" masonry_selector=".grid-item" masonry_animation="slide-up"]') }}
+      {# <div class="posts grid grid-home" data-masonry='{"selector":".grid-item","columnwidth":"","animation":"slide-up","horizontalorder":""}'>
+        {% for item in items %}
+          <a class="post grid-item grid-item--{{ item.type.labels.singular_name }}" href="{{ item.link }}">
+            {% if item.thumbnail %}
+            <div class="featuredInfo featuredInfo-top">
+              <div class="date">{{ item.datePost|date("d.m.Y")|escape('wp_kses_post') }}</div>
+              <div class="post-type">{{ item.type.labels.singular_name }}</div>
+            </div>
+            {% endif %}
+            <div class="featuredImage">
+              <img class="figure-image lazyload"
+              src="{{ item.thumbnail.src|resize(32) }}"
+              data-srcset="{{function('wp_get_attachment_image_srcset', item.thumbnail.id)}}"
+              data-sizes="auto">
+            </div>
+            <div class="featuredInfo featuredInfo-bottom">
+              <p class="title">{{ item.title }}</p> 
+            </div>
+          </a>
+        {% endfor %}
+      </div> #}
+      {# {% set pagination = items.pagination %}
+      {% if pagination.pages %} #}
+        {# {% if loadMore %}
+          <div class="pagination pagination--center">
+            <div class="pagination-loadMore">
+            <a data-action="loadMore" href="{{ pagination.next.link }}" class="button button--small">Load More</a>
+            </div>
+          </div>
+        {% endif %} #}
+      {# {% endif %} #}
+      {# <div class="allPostsLink">
+        <a href="{{ postTypeArchiveLink }}" class="button button--link">{{ labels.allPosts }}</a>
+      </div> #}
+    </div>
+  </div>
+{# {% endif %} #}

@@ -1,0 +1,64 @@
+[is='flynt-block-library'] {
+  .content {
+    @include reset-content-margins;
+
+    .fa-spinner {
+      background-color: $yellow;
+      border: 1px solid $blue;
+    }
+
+    .manage-layout1 {
+      border: 1px solid $blue;
+      box-shadow: 10px 12px 12px -6px $black;
+
+      &:hover {
+        .caf-post-title {
+          background-color: $blue !important;
+  
+          h2 {
+            color: $yellow !important;
+          }
+        }
+      }
+    }
+
+    #manage-post-area {
+      .caf-meta-content,
+      .caf-content,
+      .caf-content-read-more {
+        display: none;
+      }
+
+      .caf-post-title {
+        background-color: $yellow;
+        padding: $spacing-small;
+
+        h2 {
+          color: $blue;
+          font-size: 1.5rem;
+
+          a {
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+
+    .data-target-div1 .error-caf {
+      background-color: $yellow;
+      border: 1px solid $blue;
+      color: $blue;
+      font-size: 2.5rem;
+    }
+
+    .caf-filter-container {
+      .active {
+        border: 1px solid $blue;
+      }
+    }
+
+    #caf-post-layout-container {
+      padding-top: 0;
+    }
+  }
+}

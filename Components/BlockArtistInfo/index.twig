@@ -1,0 +1,41 @@
+<div class="flyntComponent" is="flynt-block-artist-info">
+  <script type="application/json">{{ jsonData|json_encode }}</script>
+  <div class="container">
+    <div data-slider class="slider slider{{ sliderTrueFalse|e }} swiper-container themeLight">
+      <div class="swiper-wrapper">
+        {% for panel in repeaterSlider %}
+          <div class="slider-item swiper-slide">
+            <figure class="figure">
+              <img class="figure-image lazyload"
+                src="{{ panel.panelImage.src|resizeDynamic(0, 1200) }}">
+            </figure>
+            <figcaption class="figure-caption">{{ panel.panelImage.caption|e }}</figcaption>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="slider-button-container">
+        <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+          <i data-feather="arrow-left"></i>
+        </button>
+        {# <div data-slider-pagination class="slider-pagination swiper-pagination-fraction"></div> #}
+        <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+          <i data-feather="arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="socials">
+      <ul class="list">
+        {% for panel in repeaterPanels %}
+          <li class="panel">
+            <a href="{{ panel.panelLink.url }}" target="_blank" rel="noreferrer noopener" type="button">
+              {{ panel.panelLink.title|e }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="bio">
+      {{ bioHtml|e('wp_kses_post') }}
+    </div>
+  </div>
+</div>

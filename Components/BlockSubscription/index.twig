@@ -1,0 +1,76 @@
+<div class="flyntComponent boxed" id="#{{ options.sectionId|lower|replace({' ': '-'})|replace({'&': '-'}) }}" is="flynt-block-subscription">
+  <div class="container notFullWidth">
+    <div class="box">
+      <div class="box-inner box-inner--content">
+        <div class="subscriptions">
+        <div>{{ subscriptionIntroHtml|e('wp_kses_post') }}</div>
+        <div class="subscriptions-list">
+          <ul class="accordion">
+          {% for panel in accordionMonthly %}
+            <li class="panel">
+              <button class="panel-trigger h3" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+                Montly Subscriptions
+              </button>
+              <div class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
+                <div class="panel-inner">
+                  {% if panel.option1 %}<a class="member-menu--item button" href="{{ panel.option1.url }}">{{ panel.option1.title|e }}</a>{% endif %}
+                  {% if panel.option2 %}<a class="member-menu--item button" href="{{ panel.option2.url }}">{{ panel.option2.title|e }}</a>{% endif %}
+                  {% if panel.option3 %}<a class="member-menu--item button" href="{{ panel.option3.url }}">{{ panel.option3.title|e }}</a>{% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+          <ul class="accordion">
+          {% for panel in accordionYearly %}
+            <li class="panel">
+              <button class="panel-trigger h3" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+                Yearly Subscriptions
+              </button>
+              <div class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
+                <div class="panel-inner">
+                  {% if panel.option1 %}<a class="member-menu--item button" href="{{ panel.option1.url }}">{{ panel.option1.title|e }}</a>{% endif %}
+                  {% if panel.option2 %}<a class="member-menu--item button" href="{{ panel.option2.url }}">{{ panel.option2.title|e }}</a>{% endif %}
+                  {% if panel.option3 %}<a class="member-menu--item button" href="{{ panel.option3.url }}">{{ panel.option3.title|e }}</a>{% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+          <ul class="accordion">
+          {% for panel in accordionOnetime %}
+            <li class="panel">
+              <button class="panel-trigger h3" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+                One Time Subscriptions
+              </button>
+              <div class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
+                <div class="panel-inner">
+                  {% if panel.option1 %}<a class="member-menu--item button" href="{{ panel.option1.url }}">{{ panel.option1.title|e }}</a>{% endif %}
+                  {% if panel.option2 %}<a class="member-menu--item button" href="{{ panel.option2.url }}">{{ panel.option2.title|e }}</a>{% endif %}
+                  {% if panel.option3 %}<a class="member-menu--item button" href="{{ panel.option3.url }}">{{ panel.option3.title|e }}</a>{% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        {# {% for subscription in subscriptions %}
+          <a class="member-menu--item button" href="{{ subscription.subscriptionLink.url }}">{{ subscription.subscriptionLink.title|e }}</a>
+        {% endfor %} #}
+        </div>
+        </div>
+        <div>{{ contentHtml|e('wp_kses_post') }}</div>
+      </div>
+      <div class="box-inner box-inner--image">
+        <figure class="figure">
+          <img class="figure-image lazyload"
+            src="{{ image.src|resize(32) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', image.id)}}"
+            data-sizes="auto">
+          {% if image.caption %}
+            <figcaption class="figure-caption">{{ image.caption|e }}</figcaption>
+          {% endif %}
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

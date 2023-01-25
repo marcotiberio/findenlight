@@ -1,0 +1,42 @@
+[is='flynt-block-announcement'] {
+  background-color: $red;
+  padding: 0 !important;
+  position: relative;
+  width: 100%;
+  z-index: 1011;
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .cta {
+      color: $white;
+      font-weight: 700;
+      line-height: 2;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .close {
+      color: $white;
+      font-weight: 700;
+      line-height: 2;
+      position: fixed;
+      right: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      top: 0;
+      transition: transform 0.4s ease-in-out;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        outline: 0;
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
+}

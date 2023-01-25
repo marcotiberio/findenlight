@@ -1,0 +1,35 @@
+<div class="flyntComponent" is="flynt-navigation-footer-columns">
+  <div class="container">
+    <div class="columns">
+      <div class="columns-menu">
+        {% include "Partials/_menu.twig" with { items: menu.items } %}
+        {% if logotype %}
+        <div class="logotype">
+          <figure class="figure">
+            <img class="figure-image lazyload" src="{{ logotype.src|resize(540) }}">
+          </figure>
+        </div>
+        {% endif %}
+      </div>
+      <div class="columns-info">
+        {# <div class="newsletter">
+          {{ newsletter }}
+        </div> #}
+        <div class="social">
+          {% if social %}
+            <ul class="socialList">
+              {% for socials in social %}
+                <li class="socialList-item">
+                  <a class="socialList-link" href="{{ socials.url }}" aria-label="{{ socials.platform.label }}">
+                    {{- socials.icon -}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {# {% include 'Partials/_backtotop.twig' %} #}
+  </div>
+</div>

@@ -1,0 +1,8 @@
+[is='flynt-block-youtube-oembed'] {
+  @import 'Partials/video';
+  @import 'Partials/figure';
+  
+  .figure-caption {
+    margin-left: 0.625rem;
+  }
+}

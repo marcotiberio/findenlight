@@ -1,0 +1,161 @@
+[is='flynt-grid-posts-latest'] {
+  .preContent {
+    margin-bottom: $spacing-small;
+    padding: $spacing-small 0;
+    text-align: left;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-small 0;
+      width: 100%;
+    }
+  }
+  
+  .grid {
+    @include reset-list;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .grid-item--project {
+    margin-bottom: $spacing-large;
+    width: 100%;
+
+    &:nth-child(even) {
+      .content-title {
+        margin-right: $spacing-small;
+        text-align: right;
+      }
+
+      .content-link {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-grow: 1;
+        text-decoration: none;
+      }
+
+      .content-inner {
+        margin-left: 0;
+        margin-right: $spacing-small;
+        text-align: right;
+
+        @media (max-width: $breakpoint-mobile) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+  
+      &-title {
+        background-color: $yellow;
+        border: 1px solid $blue;
+        display: none;
+        margin-left: $spacing-small;
+        margin-top: $spacing-small;
+        padding: $spacing-small/2 $spacing-small;
+        position: absolute;
+        width: fit-content;
+        z-index: 1;
+  
+        @media (max-width: $breakpoint-mobile) {
+          width: fit-content;
+        }
+      }
+  
+      &-image {
+        box-shadow: 10px 12px 12px -6px $black;
+        flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
+        padding: 0;
+        position: relative;
+        width: 50%;
+        
+        @media (max-width: $breakpoint-mobile) {
+          padding: 0;
+          width: 100%;
+        }
+      }
+  
+      &-inner {
+        @include reset-content-margins;
+        background-color: $blue;
+        color: $yellow;
+        column-gap: 0;
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: $spacing-small;
+        padding: $spacing-small $spacing-small;
+        width: calc(50% - 30px);
+  
+        @media (max-width: $breakpoint-mobile) {
+          margin-left: 0;
+          padding: $spacing-small;
+          width: 100%;
+        }
+  
+        p {
+          margin: 0;
+        }
+  
+        .date {
+          margin-bottom: $spacing-small/2;
+        }
+
+        .title {
+          order: -1;
+        }
+      }
+  
+      &-link {
+        display: flex;
+        flex-flow: row wrap;
+        flex-grow: 1;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+  
+        @media (max-width: $breakpoint-mobile) {
+          flex-flow: column wrap;
+        }
+      }
+  
+      &-footer {
+        align-items: center;
+        align-self: flex-end;
+        border-top: 1px solid $color-border;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        width: 100%;
+  
+        .content-readMore {
+          padding: 0.9rem 0 1.1rem;
+  
+          &::before {
+            bottom: 1.1rem;
+          }
+        }
+  
+        @media (min-width: $breakpoint-tablet) {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+
+  .allPostsLink {
+    padding-top: 1.5rem;
+    text-align: center;
+
+    @media (min-width: $breakpoint-desktop) {
+      padding-top: 3rem;
+    }
+  }
+}

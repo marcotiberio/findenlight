@@ -1,0 +1,74 @@
+.plyr {
+  min-width: 50px !important;
+
+  @media (max-width: $breakpoint-desktop - 1) {
+    display: none;
+  }
+}
+
+.play-link {
+  align-items: center;
+  display: flex;
+
+  #playLink {
+    margin-left: 10px;
+    transform: scale(2);
+  }
+}
+
+.plyr--audio {
+  .plyr__controls {
+    background-color: transparent !important;
+    border: 2px solid $yellow;
+  }
+
+  .plyr__control {
+    svg {
+      fill: $yellow !important;
+    }
+
+    &:hover {
+      background: $yellow !important;
+
+      svg {
+        fill: $blue !important;
+      }
+    }
+  }
+
+  .plyr--audio {
+    .plyr__control {
+      &:hover {
+        background: transparent !important;
+        border: 1px solid $yellow !important;
+        border-radius: 0 !important;
+      }
+    }
+  }
+  
+  .plyr__volume,
+  .plyr__controls__item[data-plyr='download'] {
+    display: none !important;
+  }
+
+  .plyr__controls__item.plyr__time {
+    color: $yellow;
+    font-size: 1rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    .plyr__controls {
+      justify-content: flex-start;
+    }
+
+    .plyr__progress__container {
+      display: none !important;
+    }
+
+    .plyr__controls__item:first-child {
+      margin: 0;
+    }
+  }
+}
+
+@import 'Partials/audioplayer';

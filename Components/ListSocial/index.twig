@@ -1,0 +1,22 @@
+<div class="flyntComponent flyntComponent-listSocial" is="flynt-list-social">
+  <div class="container">
+    {# {% if contact %}
+      <a class="contact" href="{{ contact.url }}">{{ contact.title|e }}</a>
+    {% endif %} #}
+    {# <div class="componentTitle">{{ title|e }}</div> #}
+    <div class="social">
+      {% if social %}
+        <ul class="socialList">
+          {% for socials in social %}
+            <li class="socialList-item">
+              <a class="socialList-link" href="{{ socials.url }}" aria-label="{{ socials.platform.label }}">
+                {{- socials.icon -}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+</div>

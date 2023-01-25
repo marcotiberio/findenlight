@@ -1,0 +1,1100 @@
+/**
+* 0.0 Root
+*
+* Top level styles every element should inherit.
+*/
+
+@import url('https://use.typekit.net/zcs5agc.css');
+
+@include font-face('Cy', 'CyExtraBold', '800', 'normal');
+@include font-face('SofiaProRegular', 'SofiaProRegular', '400', 'italic');
+@include font-face('SofiaProRegularItalic', 'SofiaProRegularItalic', '400', 'italic');
+@include font-face('SofiaProMedium', 'SofiaProMedium', '500', 'normal');
+@include font-face('SofiaProSemiBold', 'SofiaProSemiBold', '600', 'normal');
+@include font-face('SofiaProSemiBoldItalic', 'SofiaProSemiBoldItalic', '600', 'italic');
+
+
+html {
+  background-color: $yellow;
+  box-sizing: border-box;
+  color: $blue;
+  font-family: Garamond, serif;
+  font-size: 18px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  // height: 100%;
+  height: fill-available;
+  line-height: 1.2;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scroll-behavior: smooth;
+  // transition: all 0.2s linear;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 16px;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+// html.hidden {
+//   display: none;
+// }
+
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: fill-available;
+  overflow-x: hidden;
+}
+
+::placeholder {
+  color: $black;
+  font-size: 20px;
+  opacity: 1;
+}
+
+::selection {
+  background: $blue;
+  color: $yellow;
+}
+
+/**
+* 1.0 Typography
+*
+* Styling all likely used content flow elements.
+*/
+
+h1,
+h2 {
+  color: $color-text;
+  font-weight: 800;
+  line-height: 1.45;
+  margin-bottom: 0.9rem;
+  margin-top: 0;
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  // text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 6rem;
+  }
+}
+
+.heroTitle {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  // text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 6rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  // text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 3rem;
+  }
+}
+
+.sectionTitle {
+  color: $red;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 3rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.5rem;
+  // font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  // text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 2rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: $spacing-small;
+  // padding-top: $spacing-small;
+  // text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: 3rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  padding-top: 0.5rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
+a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+
+  &:hover,
+  &:focus {
+    color: $color-text;
+    text-decoration: none;
+  }
+}
+
+p,
+.paragraph,
+table,
+figure {
+  font-size: 1.2rem;
+  margin: 0 0 1.2rem;
+}
+
+.small {
+  font-size: 1rem;
+}
+
+hr {
+  background-color: $color-border;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 2.4rem 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+figcaption {
+  font-size: 1rem;
+  margin-top: $spacing-small;
+
+  // @media (max-width: $breakpoint-tablet) {
+  //   margin-bottom: $spacing-small;
+  // }
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 0 0.3rem;
+}
+
+blockquote,
+.blockquote {
+  border-left: 4px solid $color-accent;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  line-height: 1.55;
+  margin: 2.4rem auto;
+  max-width: 28rem;
+  padding: 0.8rem 1.5rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+* 1.1 Lists & Tables
+*
+* Default and custom styled list and table elements.
+*/
+
+ul,
+ol {
+  margin: 0 0 1.2rem;
+  padding-left: 1.5rem;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+/* Icon Lists */
+
+.iconList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+
+    &::before {
+      background-size: contain;
+      content: '';
+      display: block;
+      height: 1rem;
+      left: 0;
+      position: absolute;
+      top: 0.25rem;
+      width: 1rem;
+    }
+  }
+
+  &--checkCircle {
+    li::before {
+      background-image: url('../assets/icons/check-circle.svg');
+    }
+  }
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+}
+
+td,
+th {
+  padding: 1.25rem;
+  text-align: inherit;
+  vertical-align: top;
+}
+
+thead {
+  th {
+    border-bottom: 2px solid $color-accent;
+    color: $color-headline;
+    padding-bottom: 10px;
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: $color-background-light;
+}
+
+.sans {
+  font-family: 'Rhetorik Sans Regular', sans-serif;
+}
+
+.serif {
+  font-family: 'Rhetorik Serif Regular', serif;
+}
+
+/**
+* 1.2 Buttons
+*
+* Global button elements, including reset on standard button element.
+*/
+
+[type='button'] {
+  appearance: none;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-align: inherit;
+  transition: all 0.25s linear;
+}
+
+.button {
+  appearance: none;
+  background-color: $yellow;
+  border: 1px solid $blue;
+  border-radius: 0;
+  color: $blue;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: inherit;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+  user-select: none;
+
+  &:disabled,
+  &--disabled {
+    cursor: default;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    border: 1px solid $yellow;
+    color: $yellow;
+    transition: all 0.25s ease-in-out;
+  }
+
+  &--link {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    padding: 0;
+    position: relative;
+    text-decoration: underline;
+    text-transform: none;
+    text-underline-offset: 5px;
+    transition: color 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      border: 0;
+      color: $color-text;
+      text-decoration: none;
+      transition: color 0.2s ease-out;
+    }
+  }
+}
+
+/* Pills */
+
+.pill {
+  background-color: $color-background-dark;
+  border-radius: 1rem;
+  color: $color-background;
+  display: inline-block;
+  font-size: 0.8rem;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0.125rem 1rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: $color-background;
+  }
+}
+
+/* Icons */
+
+.feather {
+  color: $color-accent;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+}
+
+/**
+* 1.3 Forms
+*
+* Global form elements, including structering wrapper elements.
+*/
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0 0 1.5rem;
+  padding: 0;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: transparent !important;
+    margin: 0 0 1.875rem;
+  }
+}
+
+legend {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.9375rem;
+}
+
+label {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+#{$input-selectors} {
+  appearance: none;
+  background-color: $white;
+  border: 0;
+  border-radius: 0;
+  color: $color-headline;
+  font-family: inherit;
+  font-size: inherit;
+  min-height: 50px;
+}
+
+input,
+select,
+textarea {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  padding: 5px 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  height: auto !important;
+  min-height: 2rem !important;
+  padding: 20px;
+  resize: vertical;
+  width: 100%;
+}
+
+select {
+  $color-text-rgb: red($color-contrast), green($color-contrast),
+    blue($color-contrast);
+
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='rgb(#{$color-text-rgb})' stroke-width='5'  points='2,9 16,25 30,9 '/%3E%3C/svg%3E");
+  background-position: calc(100% - 18px) center;
+  background-repeat: no-repeat;
+  background-size: 9px;
+  color: $blue;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-right: 25px;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  border: 1px solid $black;
+  border-radius: 0;
+  margin: 0 10px 0 0;
+  opacity: 1;
+  pointer-events: none;
+  position: relative;
+
+  &,
+  &:hover,
+  &:focus {
+    border-color: $color-border;
+    outline: 0;
+  }
+
+  +label {
+    display: inline-block;
+    padding-left: 1.875rem;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      background-color: transparent;
+      border: 1px solid $blue;
+      border-radius: 2px;
+      content: '';
+      display: block;
+      height: 15px;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 4px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      width: 15px;
+    }
+  }
+
+  &:checked {
+    +label::before {
+      background-color: $color-accent;
+      border-color: $color-accent;
+      box-shadow: inset 0 0 0 2px #fff;
+    }
+  }
+}
+
+[type='radio'] {
+  +label::before {
+    border-radius: 50%;
+  }
+}
+
+[type='email'] {
+  appearance: none;
+  background-color: transparent;
+  border-bottom: 1px solid $blue;
+  border-radius: 0;
+  color: $blue;
+  font-family: inherit;
+  font-size: 1.5rem;
+  min-height: 30px;
+}
+
+[type='text'],
+[type='password'] {
+  appearance: none;
+  background-color: transparent;
+  border-bottom: 1px solid $blue;
+  border-radius: 0;
+  color: $blue;
+  font-family: inherit;
+  font-size: 1.5rem;
+  min-height: 30px;
+}
+
+form.pmpro_form,
+form.pmpro_form textarea,
+form.pmpro_form select,
+#loginform input[type='text'],
+#loginform input[type='password'] {
+  max-width: 100% !important;
+}
+
+/**
+* 2.0 Helpers
+*
+* Global layout classes for a consistent appearance.
+*/
+
+.mainHeader {
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.25s linear;
+  width: 100%;
+  z-index: 1010;
+
+  &--open {
+    background-color: $white;
+    height: 275px;
+  }
+  
+  &Out {
+    transform: translateY(-30px);
+    transition: all 0.25s linear;
+  }
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: all 0.25s linear;
+    width: auto;
+    z-index: 1010;
+
+    &Out {
+      transform: translateY(-150px);
+      transition: all 0.25s linear;
+    }
+  }
+}
+
+.mainFooter {
+  padding-top: $spacing-small;
+}
+
+.pageWrapper {
+  background-color: $yellow;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .admin-bar & {
+    padding-top: 46px;
+
+    @media (min-width: 782px) {
+      padding-top: 32px;
+    }
+  }
+}
+
+.mainContent {
+  flex: 1 0 auto;
+  margin-top: $nav-height;
+  min-height: calc(100vh - 110px);
+  
+  @media (min-width: $breakpoint-desktop) {
+    min-height: calc(100vh - 110px);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: $nav-height-mobile;
+    min-height: calc(100vh - 110px);
+  }
+}
+
+// html.home {
+//   .mainContent {
+//     flex: 1 0 auto;
+//     margin-top: $nav-height*5;
+  
+//     @media (max-width: $breakpoint-tablet) {
+//       margin-top: $nav-height-mobile;
+//     }
+//   }
+// }
+
+// html:not(.home) {
+//   .mainContent {
+//     flex: 1 0 auto;
+//     margin-top: $nav-height;
+
+//     @media (max-width: $breakpoint-tablet) {
+//       margin-top: $nav-height-mobile;
+//     }
+//   }
+// }
+
+.notFullWidth {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.flyntComponent {
+  position: relative;
+
+  &:first-child {
+    // padding-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: $spacing-small;
+  }
+}
+
+.boxed {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: $spacing-large $spacing-large 0;
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-large $spacing-small 0;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-large $spacing-small 0;
+  }
+}
+
+.post-related {
+  border-top: 1px solid $blue;
+
+  .flyntComponent {
+    position: relative;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .grid-item--event {
+    .intro {
+      display: none;
+    }
+  }
+}
+
+.componentSpacing {
+  margin: $component-spacing-mobile 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: $component-spacing-tablet 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin: $component-spacing-desktop 0;
+  }
+
+  &[class*='theme'] {
+    margin: 0;
+    padding: $component-spacing-mobile 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: $component-spacing-tablet 0;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      padding: $component-spacing-desktop 0;
+    }
+  }
+}
+
+.centerMaxWidthContainer {
+  @include center;
+
+  @media (min-width: $breakpoint-tablet) {
+    @include center($padding: $spacing-large);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    @include center($padding: $spacing-large);
+  }
+}
+
+.centerContentMaxWidth {
+  margin: 0 auto;
+  max-width: $content-max-width;
+}
+
+.preContent {
+  @include reset-content-margins;
+  margin: 0;
+  text-align: left;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: $spacing-small;
+    text-align: left;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: $spacing-small;
+    text-align: left;
+  }
+}
+
+.postContent {
+  @include reset-content-margins;
+  margin: 32px auto 0;
+  max-width: $content-max-width;
+  text-align: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: $spacing-large;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: $spacing-large;
+  }
+}
+
+.scrollableTableWrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+/* Class for text that should only be visible to screen readers */
+
+.visuallyHidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px !important;
+}
+
+/* Box Helpers */
+
+.boxPadding {
+  @include reset-content-margins;
+  padding: 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 30px;
+  }
+}
+
+.boxShadow {
+  box-shadow: 0 1px 26px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Skip link behaviour */
+
+.skipLink {
+  position: fixed;
+  top: -100px;
+  z-index: 999;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+/**
+* 3.0 Themes
+*
+* Color themes for backgrounds and content elements.
+*/
+
+// .themeLight {
+//   background-color: $color-background-light;
+// }
+
+// .themeDark {
+//   background-color: $color-background-dark;
+
+//   &,
+//   #{$heading-selectors} {
+//     color: $color-background;
+//   }
+
+//   .button {
+//     &:hover,
+//     &:focus {
+//       background-color: $color-background-hero;
+//       border-color: $color-background-hero;
+//       color: $color-background;
+//     }
+
+//     &--ghost {
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         border-color: $color-background-hero;
+//         color: $color-background-hero;
+//       }
+//     }
+
+//     &--link {
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         color: $color-background;
+
+//         &::before {
+//           background-color: $color-background;
+//         }
+//       }
+
+//       &::after {
+//         $color-accent-rgb: red($color-accent), green($color-accent), blue($color-accent);
+//         $color-background-rgb: red($color-background), green($color-background), blue($color-background);
+
+//         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-accent-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-rgb})'/%3E%3C/svg%3E");
+//       }
+//     }
+//   }
+
+//   .pill {
+//     background-color: $color-background-hero;
+//   }
+// }
+
+// .themeHero {
+//   background-color: $color-background-hero;
+
+//   &,
+//   #{$heading-selectors},
+//   a,
+//   .feather {
+//     color: $color-background;
+//   }
+
+//   a:hover,
+//   a:focus {
+//     color: $color-background-dark;
+//   }
+
+//   .button {
+//     background-color: $color-background-dark;
+//     border-color: $color-background-dark;
+//     color: $color-background;
+
+//     &:hover,
+//     &:focus {
+//       background-color: $color-background;
+//       border-color: $color-background;
+//       color: $color-background-dark;
+//     }
+
+//     &--ghost {
+//       background-color: transparent;
+//       border-color: $color-background-dark;
+//       color: $color-background-dark;
+
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         border-color: $color-background;
+//         color: $color-background;
+//       }
+//     }
+
+//     &--link {
+//       background-color: transparent;
+//       color: $color-background;
+
+//       &::before {
+//         background-color: $color-background;
+//       }
+
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         color: $color-background-dark;
+
+//         &::before {
+//           background-color: $color-background-dark;
+//         }
+//       }
+
+//       &::after {
+//         $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
+//         $color-background-rgb: red($color-background), green($color-background), blue($color-background);
+
+//         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-background-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-dark-rgb})'/%3E%3C/svg%3E");
+//       }
+//     }
+//   }
+
+//   .pill {
+//     &:hover,
+//     &:focus {
+//       color: $color-background;
+//     }
+//   }
+// }
+
+// .themeReset {
+//   background-color: $color-background;
+//   color: $color-text;
+
+//   #{$heading-selectors} {
+//     color: $color-headline;
+
+//     a,
+//     a:hover,
+//     a:focus {
+//       color: $color-headline;
+//       text-decoration: none;
+//     }
+//   }
+
+//   a,
+//   .feather {
+//     color: $color-accent;
+//   }
+
+//   a:hover,
+//   a:focus {
+//     color: darken($color-accent, 10%);
+//   }
+
+//   .button {
+//     background-color: $color-accent;
+//     border-color: $color-accent;
+//     color: $color-background;
+
+//     &:hover,
+//     &:focus {
+//       background-color: $color-background-dark;
+//       border-color: $color-background-dark;
+//       color: $color-background;
+//     }
+
+//     &--ghost {
+//       background-color: transparent;
+//       border-color: $color-accent;
+//       color: $color-accent;
+
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         border-color: $color-background-dark;
+//         color: $color-background-dark;
+//       }
+//     }
+
+//     &--link {
+//       background-color: transparent;
+//       color: $color-accent;
+
+//       &:hover,
+//       &:focus {
+//         background-color: transparent;
+//         color: $color-background-dark;
+
+//         &::before {
+//           background-color: $color-background-dark;
+//         }
+//       }
+
+//       &::before {
+//         background-color: $color-accent;
+//       }
+
+//       &::after {
+//         $color-accent-rgb: red($color-accent), green($color-accent), blue($color-accent);
+//         $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
+
+//         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.586 5L.293 8.293a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4A1 1 0 1 0 .293 1.707L3.586 5z' fill='rgb(#{$color-accent-rgb})'/%3E%3Cpath d='M13.586 5l-3.293 3.293a1 1 0 0 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414l-4-4a1 1 0 0 0-1.414 1.414L13.586 5z' fill='rgb(#{$color-background-dark-rgb})'/%3E%3C/svg%3E");
+//       }
+//     }
+//   }
+
+//   .pill {
+//     color: $color-background;
+//   }
+// }

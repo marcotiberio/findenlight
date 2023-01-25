@@ -1,0 +1,27 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  
+
+  <ul class="list">
+    {% for post in latestArticles %}
+    <li class="list-item">
+      <a class="list-item-link" href="{{ post.link }}">
+        <div class="featuredInfo">
+          <div>{{ post.datePost|date("d.m.Y")|escape('wp_kses_post') }}</div>
+          <p class="title" href="{{ post.link }}">{{ post.title }}</p>
+        </div>
+        {% if post.thumbnail %}
+        <div class="featuredImage">
+          <img class="figure-image lazyload"
+            src="{{ post.thumbnail.src|resize(32) }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+            data-sizes="auto">
+        </div>
+        {% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  
+{% endblock %}

@@ -1,0 +1,75 @@
+.newsletter {
+  align-items: center;
+  display: flex;
+  height: 100%;
+
+  ::placeholder {
+    color: $yellow;
+  }
+
+  .nf-table-display {
+    margin: 0;
+    width: 100%;
+  }
+
+  td,
+  th {
+    padding: 0;
+  }
+
+  .nf-form-content {
+    padding: 0;
+  }
+
+  .nf-form-content input:not([type=button]) {
+    background-color: transparent;
+    border-bottom: 1px solid $yellow;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    color: $yellow;
+  }
+
+  .nf-form-content .ninja-forms-field {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .nf-form-content [type='button'] {
+    background-color: transparent;
+    border: 1px solid $yellow;
+    color: $yellow;
+
+    &:hover,
+    &:focus {
+      background-color: $yellow;
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+
+  #ninja_forms_required_items,
+  .nf-field-container {
+    clear: both;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .nf-response-msg {
+    p {
+      color: $yellow;
+      margin-bottom: 0;
+    }
+  }
+
+  nf-fields-wrap {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: $breakpoint-mobile) {
+      justify-content: center;
+      margin-bottom: $spacing-small;
+    }
+  }
+}

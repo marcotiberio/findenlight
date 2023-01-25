@@ -1,0 +1,117 @@
+[is='flynt-grid-posts-related'] {
+  padding-top: $spacing-small;
+
+  .preContent {
+    margin-bottom: $spacing-small;
+    padding: $spacing-small 0;
+    text-align: left;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-small 0;
+      width: 100%;
+    }
+  }
+  
+  .grid {
+    @include reset-list;
+    column-gap: $spacing-small;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .grid-item {
+    border: 1px solid $blue;
+    padding: $spacing-small;
+    width: 100%;
+
+    .content {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+  
+      &-image {
+        // box-shadow: 10px 12px 12px -6px $black;
+        flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
+        padding: 0;
+        position: relative;
+        
+        @media (max-width: $breakpoint-mobile) {
+          padding: 0;
+          width: 100%;
+        }
+      }
+  
+      &-inner {
+        @include reset-content-margins;
+        color: $blue;
+        column-gap: 0;
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: $spacing-small/2;
+  
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+        }
+  
+        p {
+          margin: 0;
+        }
+  
+        .date {
+          margin-bottom: $spacing-small/2;
+        }
+
+        .title {
+          order: -1;
+        }
+      }
+  
+      &-link {
+        display: flex;
+        flex-flow: column wrap;
+        flex-grow: 1;
+        text-decoration: none;
+      }
+  
+      // &-footer {
+      //   align-items: center;
+      //   align-self: flex-end;
+      //   border-top: 1px solid $color-border;
+      //   display: flex;
+      //   justify-content: space-between;
+      //   padding: 0 20px;
+      //   width: 100%;
+  
+      //   .content-readMore {
+      //     padding: 0.9rem 0 1.1rem;
+  
+      //     &::before {
+      //       bottom: 1.1rem;
+      //     }
+      //   }
+  
+      //   @media (min-width: $breakpoint-tablet) {
+      //     padding: 0 30px;
+      //   }
+      // }
+    }
+  }
+
+  // .allPostsLink {
+  //   padding-top: 1.5rem;
+  //   text-align: center;
+
+  //   @media (min-width: $breakpoint-desktop) {
+  //     padding-top: 3rem;
+  //   }
+  // }
+}

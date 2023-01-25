@@ -1,0 +1,12 @@
+.figure {
+  margin-bottom: 0;
+
+  &-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    &--isHidden {
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+[is='flynt-block-search'] {
+  // margin-top: 100px;
+
+  .searchForm {
+    padding-right: $spacing-small;
+
+    &-box {
+      width: 60%;
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 100%;
+      }
+    }
+    
+    &-field {
+      align-content: center;
+      background-color: transparent;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+  
+      @media (max-width: $breakpoint-mobile) {
+        flex-flow: column wrap;
+      }
+    }
+  
+    &-input {
+      appearance: none;
+      background-color: transparent;
+      border: 1px solid $blue;
+      border-radius: 0;
+      color: $blue;
+      font-family: inherit;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+      // min-height: 40px;
+      padding: 0 $spacing-small;
+      width: 99%;
+
+      @media (max-width: $breakpoint-mobile) {
+
+        width: 100%;
+      }
+    }
+  
+    &-submit {
+      // cursor: pointer;
+      // margin-left: $spacing-small;
+      // padding: 0;
+
+      // svg {
+      //   transform: scale(1.5);
+
+      //   path {
+      //     stroke: $blue;
+      //   }
+      // }
+    }
+  }  
+}

@@ -1,0 +1,20 @@
+{% if posts|length > 0 %}
+  <ul class="searchList">
+    {% for post in posts  %}
+      <li class="searchList-item">
+        <article class="post">
+          <header class="post-title" class="h3">
+            <a class="paragraph" href="{{ post.link }}">{{ post.title }}</a>
+          </header>
+          <footer class="post-footer">
+            <a href="{{ post.link }}" class="button" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
+          </footer>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="noResults boxPadding">
+    <h1>{{ labels.noResults }}</h1>
+  </div>
+{% endif %}

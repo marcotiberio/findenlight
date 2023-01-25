@@ -1,0 +1,150 @@
+[is='flynt-grid-posts-events-latest'] {
+  .preContent {
+    margin-bottom: $spacing-small;
+    padding: $spacing-small 0;
+    text-align: left;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-small 0;
+      width: 100%;
+    }
+  }
+  
+  .grid {
+    @include reset-list;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .grid-item--event {
+    border-bottom: 1px solid $blue;
+    width: 100%;
+
+    @media (min-width: $breakpoint-desktop) {
+      &:hover {
+        background-color: $blue;
+  
+        .date,
+        .title {
+          color: $yellow !important;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-small 0;
+      width: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+  
+      &-title {
+        display: none;
+      }
+  
+      &-image {
+        box-shadow: 10px 12px 12px -6px $black;
+        display: none;
+        flex-shrink: 0; // IE11 bug fix (prevent image from stretchin')
+        padding: $spacing-small 0;
+        width: 30%;
+
+        @media (max-width: $breakpoint-mobile) {
+          padding: 0;
+          width: 40%;
+        }
+      }
+  
+      &-inner {
+        @include reset-content-margins;
+        align-items: flex-start;
+        column-gap: 0;
+        display: flex;
+        flex-flow: row wrap;
+        font-weight: 400;
+        justify-content: space-between;
+        padding: $spacing-small;
+        width: 100%;
+
+        @media (max-width: $breakpoint-mobile) {
+          height: 100%;
+          padding: 0;
+          width: 100%;
+        }
+
+        div {
+          margin-bottom: 0;
+        }
+  
+        p {
+          flex-grow: 1;
+          margin: 0;
+        }
+  
+        .date {
+          color: $blue;
+          font-weight: 400;
+          line-height: 1.2;
+          order: 1;
+          padding-right: $spacing-small/2;
+          width: 50%;
+
+          @media (max-width: $breakpoint-mobile) {
+            width: 100%;
+          }
+        }
+
+        .time {
+          margin-left: $spacing-large;
+        }
+
+        .intro {
+          color: $blue;
+          display: none;
+          order: 3;
+          width: 60%;
+
+          @media (max-width: $breakpoint-mobile) {
+            width: 100%;
+          }
+        }
+
+        .title {
+          color: $blue;
+          font-weight: 400;
+          line-height: 1.2;
+          order: 2;
+          width: 50%;
+
+          @media (max-width: $breakpoint-mobile) {
+            padding-top: $spacing-small/2;
+            width: 100%;
+          }
+        }
+      }
+  
+      &-link {
+        display: flex;
+        flex-flow: row wrap;
+        flex-grow: 1;
+        justify-content: space-between;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .allPostsLink {
+    padding-top: 1.5rem;
+    text-align: center;
+
+    @media (min-width: $breakpoint-desktop) {
+      padding-top: 3rem;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* Custom styling for single posts */
+
+/* Custom styling for single post layouts */
+
+.single-post {
+  .post {
+    &-header {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: $breakpoint-mobile) {
+        display: block;
+      }
+
+      .featuredImage {
+        .flyntComponent {
+          margin-bottom: 0;
+        }
+      }
+
+      .preContent {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: column wrap;
+        gap: $spacing-small;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        padding: 0 $spacing-large;
+        text-align: left;
+
+        @media (max-width: $breakpoint-mobile) {
+          padding: 0;
+        }
+      }
+      
+      .figure {
+        img {
+          max-height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-main {
+      padding: 0;
+
+      .flyntComponent {
+        .container {
+          padding: $spacing-large 0 0 !important;
+        }
+      }
+    }
+
+    .post-related {
+      grid-column-end: 3;
+      grid-column-start: 1;
+      margin-top: $spacing-large;
+    }
+  }
+
+  .post--audio {
+    // .featuredImage {
+    //   display: none;
+    // }
+  }
+}

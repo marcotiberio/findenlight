@@ -1,0 +1,98 @@
+.menu {
+  @include reset-list;
+  align-items: center;
+  backface-visibility: hidden;
+  background-color: $blue;
+  display: flex;
+  flex-flow: row wrap;
+  height: 0;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  overflow-y: auto;
+  padding-bottom: $spacing-large;
+  padding-top: $spacing-large*4;
+  position: fixed;
+  top: -100%;
+  transform: translateY(0);
+  transition: opacity 0.25s;
+  width: 100%;
+  z-index: -1;
+
+  @media (max-width: $breakpoint-mobile) {
+    align-items: flex-start;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+  }
+
+  .admin-bar & {
+    top: $nav-height + 46px;
+
+    @media (min-width: 783px) {
+      top: $nav-height-mobile + 32px;
+    }
+  }
+
+  &-item--current {
+    .menu-link {
+      color: $yellow;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  &-item {
+    text-align: center;
+    width: 33%;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+    }
+  }
+
+  &-link {
+    color: $yellow;
+    display: block;
+    margin: 0;
+    padding: $spacing-small;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+
+    @media (max-width: $breakpoint-mobile) {
+      text-align: left;
+    }
+
+    &:hover,
+    &:focus {
+      color: $yellow;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-left: $spacing-large;
+      padding-right: $spacing-large;
+    }
+  }
+
+  &-submenu {
+    @include reset-list;
+    display: none;
+
+    .menu-link {
+      padding-left: $spacing-large*2;
+    }
+  }
+}
+
+&.flyntComponent-menuIsOpen .menu {
+  height: fit-content;
+  opacity: 1;
+  top: 0;
+  transform: translateY(0);
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 100%;
+  }
+}

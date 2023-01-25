@@ -1,0 +1,201 @@
+[is='flynt-block-podcast-info'] {
+  .container {
+    align-items: flex-start;
+    column-gap: $spacing-small;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    padding-top: $spacing-small;
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: grid;
+      grid-auto-rows: auto;
+      grid-template-columns: 1fr;
+      row-gap: $spacing-small;
+    }
+
+    .slider {
+      grid-column-end: 2;
+      grid-column-start: 1;
+      position: relative;
+      width: 100%;
+
+      @media (max-width: $breakpoint-mobile) {
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+
+      &-item {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: (1/1) * 100%;
+        position: relative;
+      }
+
+      &-button-container {
+        align-items: center;
+        background-color: $white;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        // margin-top: -25px;
+      }
+
+      &-button {
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row-reverse wrap;
+        height: 25px;
+        justify-content: center;
+        position: relative;
+        // top: 50%;
+        // transform: translateY(-50%);
+        transition: opacity 0.2s ease-out;
+        width: 25px;
+        z-index: 10;
+
+        @media (min-width: $breakpoint-tablet) {
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            border: 1px solid $black;
+          }
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .feather {
+          color: $color-text;
+          height: auto;
+          top: 0;
+          width: 80%;
+        }
+      }
+
+      .figure {
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+  
+        &-image {
+          height: 100%;
+          margin: 0;
+          object-fit: cover;
+          width: 100%;
+        }
+  
+        &-caption {
+          background-color: transparent;
+          bottom: 0;
+          color: $black;
+          display: inline-block;
+          font-size: 12px;
+          height: 15px;
+          left: 0;
+          padding: 5px 2.5px;
+          position: absolute;
+          text-align: center;
+          width: calc(100% - 5px);
+        }
+      }
+    }
+
+    .socials {
+      grid-column-end: 3;
+      grid-column-start: 2;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+
+      .list {
+        @include reset-list;
+
+        a {
+          align-items: center;
+          display: flex;
+          text-decoration: none;
+          text-transform: uppercase;
+          width: fit-content;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+
+          &::before {
+            content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11.46" height="11.46" viewBox="0 0 11.46 11.46"%3E%3Cg id="Group_43" data-name="Group 43" transform="translate(-1410.69 -282.05)"%3E%3Cline id="Line_8" data-name="Line 8" x2="9" transform="translate(1412.65 282.55)" fill="none" stroke="%23000" stroke-linecap="square" stroke-width="1"/%3E%3Cline id="Line_9" data-name="Line 9" x2="9" transform="translate(1421.65 282.65) rotate(90)" fill="none" stroke="%23000" stroke-linecap="square" stroke-width="1"/%3E%3Cline id="Line_12" data-name="Line 12" x2="15" transform="translate(1411.043 293.157) rotate(-45)" fill="none" stroke="%23000" stroke-width="1"/%3E%3C/g%3E%3C/svg%3E%0A');
+            display: inline-block;
+            margin-right: $spacing-small / 2;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .bio {
+      grid-column-end: 3;
+      grid-column-start: 5;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-column-end: 2;
+        grid-column-start: 1;
+      }
+    }
+
+    .figure {
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &-image {
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      &-caption {
+        background: rgba($color-background-dark, 0.5);
+        bottom: 0;
+        color: $color-background-light;
+        display: inline-block;
+        font-size: 0.8rem;
+        max-width: 450px;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  .featuredImage {
+    grid-column-end: 2;
+    grid-column-start: 1;
+    position: relative;
+    width: 100%;
+    
+    .container {
+      grid-template-columns: 1fr;
+      padding: 0;
+
+      .figure {
+        position: relative;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,157 @@
+[is='flynt-grid-all-posts'] {
+  .grid {
+    column-gap: $spacing-small;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    &-item {
+      border: 1px solid $blue;
+      color: $blue;
+      display: inline;
+      flex-grow: 1;
+      float: left;
+      margin: 0 15px $spacing-small 0;
+      padding-bottom: $spacing-small;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: calc(33% - 15px);
+
+      @media (max-width: $breakpoint-tablet) {
+        width: calc(50% - 15px);
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: $blue;
+        color: $yellow;
+
+        .post-type {
+          background-color: $yellow !important;
+          color: $blue !important;
+        }
+      }
+
+      .featuredInfo {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        flex-grow: 1;
+        justify-content: flex-start;
+
+        &-top {
+          align-items: center;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          margin: 0 auto;
+          width: calc(100% - 40px);
+
+          .title {
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0;
+            text-transform: uppercase;
+            width: 100%;
+          }
+
+          .post-type {
+            background-color: $blue;
+            color: $yellow;
+            margin: 0;
+            padding: 5px 10px;
+            text-transform: none;
+          }
+
+          .date {
+            margin: 0;
+            padding: 10px;
+            text-transform: uppercase;
+          }
+        }
+
+        // &-bottom {
+        //   flex-grow: 1;
+        //   margin-bottom: 0;
+        //   width: 100%;
+        // }
+      }
+
+      .featuredImage {
+        flex-grow: 1;
+        width: 100%;
+
+        img {
+          height: auto;
+          margin: 0;
+          object-fit: cover;
+          padding: $spacing-small;
+          position: static;
+          width: 100%;
+        }
+        
+        figcaption {
+          display: none;
+        }
+      }
+    }
+
+    &-item--Artist {
+      .date {
+        display: none;
+      }
+    }
+  }
+
+  .grid-filter {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-bottom: $spacing-large;
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-flow: row nowrap;
+      overflow: scroll;
+      padding: 0;
+    }
+
+    .filter {
+      background-color: $white;
+      color: $black;
+      cursor: pointer;
+      flex-grow: 0;
+      text-align: center;
+      text-decoration: none;
+      width: 100px;
+
+      @media (max-width: $breakpoint-tablet) {
+        margin-bottom: $spacing-small;
+      }
+
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      &--active {
+        background-color: $black;
+        color: $white;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .ajax-load-more-wrap.infinite.fading-blocks>.alm-btn-wrap .alm-load-more-btn {
+    background-image: url('http://localhost:10083/wp-content/plugins/ajax-load-more/core/img/eclipse.gif');
+  }
+}

@@ -1,0 +1,71 @@
+.list {
+  @include reset-list;
+  column-gap: $spacing-large;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-right: 0;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    column-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+
+  &-item {
+    @include reset-content-margins;
+    text-transform: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-small/2;
+      width: 100%;
+
+      &:nth-child(even) {
+        text-align: right;
+      }
+    }
+
+    &:last-child {
+      grid-column-end: 3;
+      grid-column-start: 2;
+    }
+  }
+
+  &-title {
+    color: $yellow;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &-titleLink,
+  &-link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $yellow;
+      text-decoration: underline;
+    }
+  }
+
+  .childList {
+    @include reset-list;
+
+    &-item {
+      line-height: 1.625;
+      margin: 0;
+      padding: 0;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

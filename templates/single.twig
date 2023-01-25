@@ -1,0 +1,31 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post boxed post--{{ post.category|lower }}">
+    <header class="post-header">
+      {% if post.thumbnail %}
+        <div class="featuredImage">
+          {{ renderComponent('BlockImage', { image: post.thumbnail, options: { size: 'sizeLarge' }, noComponentSpacing: true }) }}
+        </div>
+      {% endif %}
+      <div class="preContent">
+        {% if post.title %}<div class="title h2">{{ post.title }}</div>{% endif %}
+        <div class="date">
+          {% if post.datePostStart %}<span class="date h3">{{ post.datePostStart|date("d.m.Y")|escape('wp_kses_post') }} - </span>{% endif %}
+          {% if post.datePostEnd %}<span class="date h3">{{ post.datePostEnd|date("d.m.Y")|escape('wp_kses_post') }}</span>{% endif %}
+          </div>
+        {% if post.location %}<div class="location h3">{{ post.location }}</div>{% endif %}
+        {% if post.introPost %}<div class="paragraph">{{ post.introPost|e('wp_kses_custom') }}</div>{% endif %}
+      </div>
+    </header>
+    <section class="post-main">
+      {{ post.content }}
+    </section>
+    {# <footer class="post-meta">
+      {{ renderComponent('BlockPostFooter', { post: post }) }}
+    </footer> #}
+    <section class="post-related">
+      {{ renderComponent('GridPostsRelated', {'preContentHtml': __('You might also like'),'taxonomies': post.categories()}) }}
+    </section>
+  </article>
+{% endblock %}

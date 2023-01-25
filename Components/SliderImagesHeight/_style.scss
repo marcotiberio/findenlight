@@ -1,0 +1,100 @@
+[is='flynt-slider-images-height'] {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  .slider {
+    grid-column-end: 2;
+    grid-column-start: 1;
+    position: relative;
+    width: 80%;
+
+    &-item {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: (9/16) * 100%;
+      position: relative;
+    }
+
+    &-button-container {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-top: -7.5px;
+    }
+
+    &-button {
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      flex-flow: row-reverse wrap;
+      height: $spacing-large;
+      justify-content: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.2s ease-out;
+      width: $spacing-large;
+      z-index: 10;
+
+      @media (min-width: $breakpoint-tablet) {
+        &:hover,
+        &:focus {
+          background-color: $red;
+          border: 1px solid $red;
+
+          .feather {
+            color: $white;
+          }
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .feather {
+        color: $red;
+        height: auto;
+        top: 0;
+        width: 80%;
+      }
+    }
+  }
+
+  .figure {
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &-image {
+      border-radius: 30px;
+      height: 100%;
+      margin: 0 auto;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &-caption {
+      background: rgba($color-background-dark, 0.5);
+      bottom: 0;
+      color: $color-background-light;
+      display: inline-block;
+      font-size: 0.8rem;
+      max-width: 450px;
+      padding: 0.25rem 0.5rem;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

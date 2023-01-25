@@ -1,0 +1,5 @@
+[is='flynt-block-wysiwyg'] {
+  .content {
+    @include reset-content-margins;
+  }
+}

@@ -1,0 +1,37 @@
+{% if items|length > 0 %}
+<div class="flyntComponent" is="flynt-block-artist-object">
+  <div class="container">
+    {% for item in items %}
+    <figure>
+    <img class="figure-image lazyload"
+      src="{{ item.thumbnail.src|resize(500) }}"
+      alt="{{ item.thumbnail.alt|e }}">
+      <figcaption class="figure-caption">{{ item.thumbnail.caption|e }}</figcaption>
+    </figure>
+    <div class="socials">
+      <ul class="list">
+          <li class="panel">
+            <a class="" href="{{ item.link }}" type="button">Read More</a>
+          </li>
+      </ul>
+    </div>
+    <div class="bio">
+      <p class="title pillCircle">{{ item.title }}</p>
+      {# {% for post in post.meta('artistComponents') %}
+        {% for content_block in artistComponents %}
+            {% if content_block.acf_fc_layout == 'BlockArtistInfo' %}
+                {{content_block.bioHtml}}
+            {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% for item in post.meta('artistComponents') %}
+        {% if item.acf_fc_layout == 'BlockArtistInfo' %}
+          <aside class="notes">{{ item.bioHtml }}</aside>
+        {% endif %}
+      {% endfor %} #}
+      {# {{ renderComponent('BlockArtistInfo', { bioHtml: item.bioHtml, options: { size: 'sizeLarge' } }) }} #}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

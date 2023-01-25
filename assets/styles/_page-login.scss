@@ -1,0 +1,50 @@
+/**
+* 7.0 Paid Membership Pro
+*
+* 7.1 Page Login
+*/
+
+.page-login {
+  .mainHeader,
+  .mainFooter,
+  .accessibility {
+    display: block;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .mainContent {
+    margin-top: 160px;
+  }
+
+  .flyntComponent--shortcode {
+    .container {
+      margin: 0 auto;
+    }
+
+    .content {
+      max-width: 30%;
+
+      @media (max-width: $breakpoint-tablet) {
+        max-width: 60%;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .pmpro_actions_nav {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  [type='password'],
+  [type='text'] {
+    width: 100%;
+  }
+}
